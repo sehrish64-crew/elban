@@ -1,15 +1,47 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { X, Home, Users, Package, BarChart3, DollarSign, Settings } from "lucide-react";
+import { X, Home, Users, BarChart3, DollarSign, Settings } from "lucide-react";
+import PotentialSuppliersIcon from "@/components/icons/PotentialSuppliersIcon";
+import ClientIcon from "@/components/icons/ClientIcon";
+import PotentialIcon from "@/components/icons/PotentialIcon";
+import ProductsIcon from "@/components/icons/ProductsIcon";
+import OrderIcon from "@/components/icons/OrderIcon";
+import ReportIcon from "@/components/icons/ReportIcon";
 
 const menuItems = [
     { name: "Dashboard", href: "/", icon: Home },
     { name: "Suppliers", href: "/suppliers", icon: Users },
-    { name: "Clients", href: "/clients", icon: Package },
-    { name: "Products", href: "/products", icon: BarChart3 },
-    { name: "Reports", href: "/reports", icon: DollarSign },
-    { name: "Finances", href: "/finances", icon: BarChart3 },
-    { name: "Settings", href: "/settings", icon: Settings },
+    {
+        name: "Potential Suppliers",
+        href: "/patient",
+        icon: PotentialSuppliersIcon,
+    },
+    {
+        name: "Clients",
+        href: "/client",
+        icon: ClientIcon
+    },
+    {
+        name: "Potential Client",
+        href: "/potential",
+        icon: PotentialIcon
+    },
+    {
+        name: "Products",
+        href: "/product",
+        icon: ProductsIcon
+    },
+    {
+        name: "Orders",
+        href: "/order",
+        icon: OrderIcon
+    },
+    {
+        name: "Reports",
+        href: "/report",
+        icon: ReportIcon
+    },
+
 ];
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -19,7 +51,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         <aside
             className={`fixed p-[10px] md:static top-0 left-0 h-full md:h-auto md:w-[101px] w-64 bg-[#355E5B] text-white flex flex-col z-50 transform transition-transform duration-300
       ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
-            style={{ borderTopLeftRadius: '12px' }}>
+            style={{ borderTopLeftRadius: "12px" }}
+        >
             {/* Mobile close button */}
             <div className="flex items-center justify-between md:justify-center text-lg mt-[10px] pr-[10px] md:mt-0 md:pr-0">
                 <button className="md:hidden" onClick={() => setIsOpen(false)}>
@@ -48,13 +81,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                                 style={{ color: isActive ? "#355E5B" : "#fff" }}
                             />
                             <span
-                                className="text-[12px]"
+                                className="text-[12px] text-center"
                                 style={{ color: isActive ? "#355E5B" : "#fff" }}
                             >
                                 {item.name}
                             </span>
                         </Link>
-
                     );
                 })}
             </nav>

@@ -55,7 +55,7 @@ export default function SuppliersPage() {
                 Export
               </div>
             </Link>
-            <Link href="#" className="btn btn-primary">
+            <Link href="/supplier/new" className="btn btn-primary">
               <div className="flex items-center gap-2">
                 <svg
                   width={14}
