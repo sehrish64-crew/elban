@@ -6,8 +6,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #FAFAFA;
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
 }
 @theme inline {
   --color-background: var(--background);
@@ -21,4 +21,42 @@ body {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+.btn-primary {
+  background-color: #355e5b;
+  border: none;
+  color: #fff;
+  padding: 9px 15px;
+  border-radius: 8px;
+}
+.btn-white {
+  border: solid 1px #eaecf0;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.btn-filter {
+  border: none;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+/* Example for WebKit browsers */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #355E5B;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

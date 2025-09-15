@@ -4,7 +4,7 @@ import { X, Home, Users, Package, BarChart3, DollarSign, Settings } from "lucide
 
 const menuItems = [
     { name: "Dashboard", href: "/", icon: Home },
-    { name: "Suppliers", href: "/supplier", icon: Users },
+    { name: "Suppliers", href: "/suppliers", icon: Users },
     { name: "Clients", href: "/clients", icon: Package },
     { name: "Products", href: "/products", icon: BarChart3 },
     { name: "Reports", href: "/reports", icon: DollarSign },
