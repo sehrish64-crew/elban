@@ -4,15 +4,15 @@ import { cn } from '@/lib/utils';
 import MultiSelectTags from "../MultiSelectTags";
 import PaymentTermsSelectTag from "../PaymentTermsSelectTag";
 
-export default function AddSupplierForm() {
+export default function AddClientForm() {
     return (
         <main className="">
             <form className="space-y-8">
                 {/* Header */}
                 <header>
-                    <h1 className="text-2xl font-semibold mb-1">Add Supplier</h1>
+                    <h1 className="text-2xl font-semibold mb-1">Add Client</h1>
                     <p className="text-gray-600 text-sm">
-                        Add supplier information for easy tracking and collaboration
+                        Add client information for seamless project and communication management.
                     </p>
                 </header>
 
@@ -22,7 +22,7 @@ export default function AddSupplierForm() {
                         <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
                             Company Information
                         </h2>
-                        <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+                        <div className="grid md:grid-cols-4 grid-cols-1 gap-4">
                             <div className="form-group flex-col flex gap-2">
                                 <label htmlFor="" className="text-[#202E2D] ">Company Name</label>
                                 <input
@@ -46,6 +46,13 @@ export default function AddSupplierForm() {
                             </div>
 
                             <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Website</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
+                            </div>
+                            <div className="form-group flex-col flex gap-2">
                                 <label htmlFor="" className="text-[#202E2D] ">VAT ID / Tax number</label>
                                 <input
                                     type="text"
@@ -66,7 +73,13 @@ export default function AddSupplierForm() {
                                     className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
                                 />
                             </div>
-
+                            <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Contact Position</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
+                            </div>
                             <div className="form-group flex-col flex gap-2">
                                 <label htmlFor="" className="text-[#202E2D] ">Legal Form </label>
                                 <Select>
@@ -109,6 +122,13 @@ export default function AddSupplierForm() {
                                     className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
                                 />
                             </div>
+                            <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Postal Code</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
+                            </div>
                         </div>
                         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
                             <div className="form-group flex-col flex gap-2">
@@ -134,16 +154,16 @@ export default function AddSupplierForm() {
                         <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
                             Commercial and Financial Data
                         </h2>
-                        <div className="grid grid-cols-1 gap-4">
-                            <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Licenses and Certifications</label>
-                                <MultiSelectTags />
-                            </div>
+                        <div className="grid grid-cols-2 gap-4">
+
                             <div className="form-group flex-col flex gap-2">
                                 <label htmlFor="" className="text-[#202E2D] ">Payment Terms</label>
                                 <PaymentTermsSelectTag />
                             </div>
-
+                            <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Discounts and Loyalty Programs</label>
+                                <MultiSelectTags />
+                            </div>
                         </div>
                         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
                             <div className="form-group flex-col flex gap-2">
@@ -190,39 +210,18 @@ export default function AddSupplierForm() {
 
                     <section className="mt-5">
                         <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
-                            Operational Data
+                            Cooperation Details
                         </h2>
-                        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                        <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Supplier Type</label>
-                                <Select>
-                                    <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                        <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                    <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                        <SelectItem
-                                            value="Form 1"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 1
-                                        </SelectItem>
-                                        <SelectItem
-                                            value="Form 2"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 2
-                                        </SelectItem>
-                                        <SelectItem
-                                            value="Form 2"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 3
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
+                                <label htmlFor="" className="text-[#202E2D] ">Purchase Frequency</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
                             </div>
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Product Categories</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Average Order Value </label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -278,7 +277,7 @@ export default function AddSupplierForm() {
                                 </Select>
                             </div>
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Available Transport Methods</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Preferred Product Categories</label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -307,7 +306,7 @@ export default function AddSupplierForm() {
                             </div>
 
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Delivery Terms (Incoterms)</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Delivery Method</label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -335,21 +334,7 @@ export default function AddSupplierForm() {
                                 </Select>
                             </div>
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Just-in-Time Delivery Available</label>
-                                <input
-                                    type="text"
-                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
-                                />
-                            </div>
-                            <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Minimum & Maximum Order Quantity</label>
-                                <input
-                                    type="text"
-                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
-                                />
-                            </div>
-                            <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Just-in-Time Delivery Available</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Fulfillment Options</label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -376,6 +361,46 @@ export default function AddSupplierForm() {
                                     </SelectContent>
                                 </Select>
                             </div>
+
+                        </div>
+
+                        <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+                            <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Delivery Addresses</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
+                            </div>
+                            <div className="form-group flex-col flex gap-2">
+                                <label htmlFor="" className="text-[#202E2D] ">Responsible Person</label>
+                                <Select>
+                                    <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
+                                        <SelectValue placeholder="Select" />
+                                    </SelectTrigger>
+                                    <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
+                                        <SelectItem
+                                            value="Form 1"
+                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                        >
+                                            Form 1
+                                        </SelectItem>
+                                        <SelectItem
+                                            value="Form 2"
+                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                        >
+                                            Form 2
+                                        </SelectItem>
+                                        <SelectItem
+                                            value="Form 2"
+                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                        >
+                                            Form 3
+                                        </SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
                         </div>
                     </section>
 
@@ -386,7 +411,7 @@ export default function AddSupplierForm() {
                         </h2>
                         <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Product Quality</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Communication Quality</label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -414,7 +439,7 @@ export default function AddSupplierForm() {
                                 </Select>
                             </div>
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Delivery Punctuality</label>
+                                <label htmlFor="" className="text-[#202E2D] ">Payment Timeliness</label>
                                 <Select>
                                     <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                         <SelectValue placeholder="Select" />
@@ -442,32 +467,11 @@ export default function AddSupplierForm() {
                                 </Select>
                             </div>
                             <div className="form-group flex-col flex gap-2">
-                                <label htmlFor="" className="text-[#202E2D] ">Customer Service & Communication</label>
-                                <Select>
-                                    <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                        <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                    <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                        <SelectItem
-                                            value="Form 1"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 1
-                                        </SelectItem>
-                                        <SelectItem
-                                            value="Form 2"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 2
-                                        </SelectItem>
-                                        <SelectItem
-                                            value="Form 2"
-                                            className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                        >
-                                            Form 3
-                                        </SelectItem>
-                                    </SelectContent>
-                                </Select>
+                                <label htmlFor="" className="text-[#202E2D] ">Complaint / Return History</label>
+                                <input
+                                    type="text"
+                                    className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                />
                             </div>
 
                         </div>
@@ -530,10 +534,10 @@ export default function AddSupplierForm() {
                             </div>
 
                         </div>
-                          <div className="grid grid-cols-1 gap-4 mt-4">
+                        <div className="grid grid-cols-1 gap-4 mt-4">
                             <div className="form-group flex-col flex gap-2">
                                 <label htmlFor="" className="text-[#202E2D] ">General Notes</label>
-                                <textarea name="" id=""   className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm resize-none"></textarea>
+                                <textarea name="" id="" className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm resize-none"></textarea>
                             </div>
                         </div>
                     </section>

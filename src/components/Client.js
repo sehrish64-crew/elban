@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function SupplierTable() {
+export default function Client() {
   const [activeTab, setActiveTab] = useState("potential");
 
   const suppliers = Array(20).fill({
@@ -44,7 +44,7 @@ export default function SupplierTable() {
               : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-          Active Suppliers
+          Active Clients
         </button>
         <button
           onClick={() => setActiveTab("active")}
@@ -53,7 +53,7 @@ export default function SupplierTable() {
               : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-          Potential Suppliers
+          Potential Clients
         </button>
         {/* Add more tabs as needed */}
       </div>

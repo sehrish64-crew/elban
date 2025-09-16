@@ -8,6 +8,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #fafafa;
+  overflow: hidden; 
 }
 
 .btn-primary {
@@ -30,6 +31,12 @@ body {
   padding: 9px 15px;
   border-radius: 8px;
   background-color: #fff;
+}
+.btn-secondary {
+  border: solid 1px #D0D5DD;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
 }
 /* Example for WebKit browsers */
 ::-webkit-scrollbar {

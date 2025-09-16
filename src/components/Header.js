@@ -7,7 +7,7 @@ export default function Header({ setIsOpen }) {
   return (
     <>
 
-      <header className="flex items-center justify-between p-4 sm:p-6 sticky top-0 z-40 w-full md:bg-transparent bg-[#FAFAFArm -rf .next]">
+      <header className="flex items-center justify-between p-4 sm:p-6 sticky top-0 z-40 w-full">
         {/* Left Section: Hamburger + Logo */}
         <div className="flex items-center gap-3 flex-1 min-w-0">
           {/* Mobile Hamburger */}
