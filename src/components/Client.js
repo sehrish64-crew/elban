@@ -2,8 +2,8 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function Client() {
-  const [activeTab, setActiveTab] = useState("potential");
+
+  export default function Client({ activeTab, setActiveTab }) {
 
   const suppliers = Array(20).fill({
     id: "#547388",

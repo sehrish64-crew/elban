@@ -2,8 +2,8 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function SupplierTable() {
-  const [activeTab, setActiveTab] = useState("potential");
+  export default function SupplierTable({ activeTab, setActiveTab }) {
+  // const [activeTab, setActiveTab] = useState("potential");
 
   const suppliers = Array(20).fill({
     id: "#547388",

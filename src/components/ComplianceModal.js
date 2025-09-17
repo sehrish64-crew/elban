@@ -778,7 +778,7 @@ const ComplianceModal = ({ isOpen, onClose }) => {
                                         <button
                                             type="button"
                                             className="btn btn-secondary"
-                                        >
+                                        onClick={onClose}>
                                             Cancel
                                         </button>
                                         <button

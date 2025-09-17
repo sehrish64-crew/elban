@@ -49,7 +49,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                 <div className='mb-4'>
                                     <h1 className="text-2xl font-[500] text-[#101828]">Add Service Provider</h1>
                                     <p className="text-[#202E2D] font-[100] text-[14px] m-0">
-                                       Add a new service provider to your network.
+                                        Add a new service provider to your network.
                                     </p>
                                 </div>
                                 <hr className='text-[#EAECF0]' />
@@ -778,7 +778,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                         <button
                                             type="button"
                                             className="btn btn-secondary"
-                                        >
+                                         onClick={onClose}>
                                             Cancel
                                         </button>
                                         <button

@@ -1,15 +1,33 @@
+'use client';
 import Link from "next/link";
 import Supplier from "../components/supplier";
+import { useState } from "react";
+
+const tabInfo = {
+  potential: {
+    title: "Suppliers",
+    subtitle: "Manage and track supplier relationships, from first contact to long-term partnerships.",
+   
+  },
+  active: {
+    title: "Potential Suppliers",
+    subtitle: "Manage and track supplier relationships, from first contact to long-term partnerships.",
+   
+  },
+};
+
+
 
 export default function SuppliersPage() {
+  const [activeTab, setActiveTab] = useState("potential");
   return (
     <>
       <div>
         <div className="flex justify-between md:items-center items-baseline md:flex-row flex-col">
           <div>
-            <h1 className="text-2xl font-[500] text-[#101828]">Suppliers</h1>
+            <h1 className="text-2xl font-[500] text-[#101828]">{tabInfo[activeTab].title}</h1>
             <p className="text-[#202E2D] font-[100] text-[14px] m-0">
-              Manage and track supplier relationships, from first contact to long-term partnerships.
+                {tabInfo[activeTab].subtitle}
             </p>
           </div>
           <div className="flex gap-3 md:flex-row flex-col md:mt-0 mt-3">
@@ -78,7 +96,7 @@ export default function SuppliersPage() {
           </div>
         </div>
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" />
-        <Supplier />
+        <Supplier activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
     </>
   );

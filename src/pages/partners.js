@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Partners from "../components/Partners";
 import LogisticModal from "../components/LogisticModal";
-// import ComplianceModal from "../components/ComplianceModal";
-// import ServiceModal from "../components/ServiceModal";
+import ComplianceModal from "../components/ComplianceModal";
+import ServiceModal from "../components/ServiceModal";
 
 const tabTitles = {
     potential: "Logistic Partners",
@@ -17,11 +17,10 @@ const tabSpan = {
 
 export default function PartnersPage() {
     const [activeTab, setActiveTab] = useState("potential");
-
-    // 🔧 Modal states
     const [showLogisticsModal, setShowLogisticsModal] = useState(false);
-    // const [showComplianceModal, setShowComplianceModal] = useState(false);
-    // const [showServiceModal, setShowServiceModal] = useState(false);
+    const [showComplianceModal, setShowComplianceModal] = useState(false);
+    const [showServiceModal, setShowServiceModal] = useState(false);
+
 
     // ✅ Move tabActions inside the component so it can access the modal state setters
     const tabActions = {
@@ -89,15 +88,17 @@ export default function PartnersPage() {
 
                 {/* ✅ Render modals conditionally */}
                 {showLogisticsModal && (
-                    <LogisticModal
-                        isOpen={showLogisticsModal}
-                        onClose={() => setShowLogisticsModal(false)}
-                    />
+                    <LogisticModal isOpen={showLogisticsModal} onClose={() => setShowLogisticsModal(false)} />
                 )}
 
-                {/* Add similar modals for Compliance & Service Provider if needed */}
-                {/* {showComplianceModal && <ComplianceModal onClose={() => setShowComplianceModal(false)} />}
-                {showServiceModal && <ServiceModal onClose={() => setShowServiceModal(false)} />} */}
+                {showComplianceModal && (
+                    <ComplianceModal isOpen={showComplianceModal} onClose={() => setShowComplianceModal(false)} />
+                )}
+
+                {showServiceModal && (
+                    <ServiceModal isOpen={showServiceModal} onClose={() => setShowServiceModal(false)} />
+                )}
+
             </div>
         </>
     );
