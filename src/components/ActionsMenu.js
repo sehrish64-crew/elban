@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { MoreVertical, Edit, Trash2, Eye } from "lucide-react";
+import Link from "next/link";
 
 export default function ActionsMenu() {
     const [open, setOpen] = useState(false);
@@ -61,7 +62,7 @@ export default function ActionsMenu() {
 
             {open && (
                 <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
-                    <button
+                    <Link href="/client"
                         className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         onClick={() => {
                             // handle view
@@ -71,7 +72,7 @@ export default function ActionsMenu() {
                     >
                         <Eye className="w-4 h-4 mr-2" />
                         View
-                    </button>
+                    </Link>
 
                     <button
                         className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

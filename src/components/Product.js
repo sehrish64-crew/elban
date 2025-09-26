@@ -88,9 +88,9 @@ export default function Client() {
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.country}</td>
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">
                                 <img
-                                src={s.img || "/cap.png"}
-                                className="w-10 h-10 object-cover rounded"
-                            />
+                                    src={s.img || "/cap.png"}
+                                    className="w-10 h-10 object-cover rounded"
+                                />
                             </td>
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.pm}</td>
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.date}</td>
@@ -99,7 +99,6 @@ export default function Client() {
                                     {s.status}
                                 </span>
                             </td>
-
                             <td className="text-center">
                                 <ActionsMenu />
                             </td>

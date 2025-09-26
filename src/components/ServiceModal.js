@@ -24,8 +24,6 @@ const ServiceModal = ({ isOpen, onClose }) => {
                         exit={{ opacity: 0 }}
                         onClick={onClose} // click outside to close
                     />
-
-                    {/* Modal Box with smooth popup animation */}
                     <motion.div
                         className="fixed inset-0 flex justify-center items-center z-50"
                         initial={{ opacity: 0, scale: 0.8, y: 30 }}
@@ -57,8 +55,6 @@ const ServiceModal = ({ isOpen, onClose }) => {
 
                             {/* Form */}
                             <div className="mt-5">
-
-
                                 <form className="space-y-8" onSubmit={handleSubmit}>
                                     {/* Company Information */}
                                     <div className="overflow-auto max-h-[calc(100vh-310px)] p-1">
@@ -192,7 +188,6 @@ const ServiceModal = ({ isOpen, onClose }) => {
 
                                             </div>
                                         </section>
-
                                         {/* Commercial and Financial Data */}
                                         <section className="mt-5">
                                             <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
@@ -778,7 +773,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                         <button
                                             type="button"
                                             className="btn btn-secondary"
-                                         onClick={onClose}>
+                                            onClick={onClose}>
                                             Cancel
                                         </button>
                                         <button

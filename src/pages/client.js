@@ -1,31 +1,39 @@
 'use client';
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Client from "../components/Client";
-
 
 const tabInfo = {
   potential: {
     title: "Clients",
-    subtitle: "Track and nurture client relationships, from first inquiry to successful projects.",
-
+    subtitle:
+      "Track and nurture client relationships, from first inquiry to successful projects.",
   },
   active: {
     title: "Potential Suppliers",
-    subtitle: "Manage and track supplier relationships, from first contact to long-term partnerships.",
-
+    subtitle:
+      "Manage and track supplier relationships, from first contact to long-term partnerships.",
   },
 };
 
-
 export default function ClientPage() {
   const [activeTab, setActiveTab] = useState("potential");
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <div>
         <div className="flex justify-between md:items-center items-baseline md:flex-row flex-col">
           <div>
-            <h1 className="text-2xl font-[500] text-[#101828]">{tabInfo[activeTab].title}</h1>
+            <h1 className="text-2xl font-[500] text-[#101828]">
+              {tabInfo[activeTab].title}
+            </h1>
             <p className="text-[#202E2D] font-[100] text-[14px] m-0">
               {tabInfo[activeTab].subtitle}
             </p>
@@ -48,7 +56,6 @@ export default function ClientPage() {
                     strokeLinejoin="round"
                   />
                 </svg>
-
                 Filters
               </div>
             </Link>
@@ -69,7 +76,6 @@ export default function ClientPage() {
                     strokeLinejoin="round"
                   />
                 </svg>
-
                 Export
               </div>
             </Link>
@@ -95,8 +101,30 @@ export default function ClientPage() {
             </Link>
           </div>
         </div>
+
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" />
-        <Client activeTab={activeTab} setActiveTab={setActiveTab} />
+
+        {/* Loader OR Client Component */}
+        {loading ? (
+          <div className="flex flex-col items-center justify-center h-[300px] gap-4">
+            {/* Spinner */}
+            <div className="w-12 h-12 border-4 border-[#144a6c] border-t-transparent rounded-full animate-spin"></div>
+
+            {/* Loading text */}
+            <p className="text-[#4e758d] text-lg font-medium">
+              Loading clients...
+            </p>
+
+            {/* Skeleton preview */}
+            <div className="w-full max-w-3xl space-y-3 mt-6">
+              <div className="h-6 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3"></div>
+            </div>
+          </div>
+        ) : (
+          <Client activeTab={activeTab} setActiveTab={setActiveTab} />
+        )}
       </div>
     </>
   );

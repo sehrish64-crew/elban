@@ -252,7 +252,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                             key={item.name}
                             href={item.href}
                             className={`flex md:flex-col flex-row items-center gap-2 px-6 py-3 rounded-lg transition 
-                ${isActive ? "bg-white" : "hover:bg-[#d3d7d91f]"}`}
+                            ${isActive ? "bg-white" : "hover:bg-[#d3d7d91f]"}`}
                             onClick={() => setIsOpen(false)}
                             style={{
                                 borderBottom: isActive ? "6px solid rgb(0 0 0 / 0.25)" : "none",
