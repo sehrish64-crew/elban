@@ -29,6 +29,7 @@ export default function ClientPage() {
   return (
     <>
       <div>
+        {/* ✅ Header always visible */}
         <div className="flex justify-between md:items-center items-baseline md:flex-row flex-col">
           <div>
             <h1 className="text-2xl font-[500] text-[#101828]">
@@ -104,7 +105,7 @@ export default function ClientPage() {
 
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" />
 
-        {/* Loader OR Client Component */}
+        {/* ✅ Loader only replaces content below header */}
         {loading ? (
           <div className="flex flex-col items-center justify-center h-[300px] gap-4">
             {/* Spinner */}

@@ -1,6 +1,4 @@
 "use client";
-import { AlertCircle, CheckCircle2, FileText, StickyNote } from "lucide-react";
-
 const logs = [
   {
     time: "01:23 AM",
@@ -134,53 +132,56 @@ const logs = [
 
 export default function SupplierLogs() {
   return (
-    <div className="overflow-auto max-h-[calc(100vh-469px)] p-6">
+    <>
       <h2 className="text-lg font-semibold text-gray-900">Supplier Logs</h2>
       <hr className="mt-3 mb-3" />
-      <p className="text-sm text-gray-500 mb-6">Aug 20, 2022 – Today</p>
+      <div className="overflow-auto max-h-[calc(100vh-469px)] p-4">
 
-      <div className="relative border-l border-gray-200">
-        {logs.map((log, index) => (
-          <div key={index} className="mb-8 ml-6 relative">
-            {/* Timeline dot */}
-            <span className="absolute -left-[40px] top-2">
-              <svg
-                width={25}
-                height={24}
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  width={24}
+        <p className="text-sm text-gray-500 mb-6">Aug 20, 2022 – Today</p>
+
+        <div className="relative border-l border-gray-200">
+          {logs.map((log, index) => (
+            <div key={index} className="mb-8 ml-6 relative">
+              {/* Timeline dot */}
+              <span className="absolute -left-[37px] top-2">
+                <svg
+                  width={25}
                   height={24}
-                  rx={12}
-                  fill="#355E5B"
-                  fillOpacity="0.32"
-                />
-                <circle cx="12.5" cy={12} r={8} fill="#355E5B" fillOpacity="0.9" />
-              </svg>
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    width={24}
+                    height={24}
+                    rx={12}
+                    fill="#355E5B"
+                    fillOpacity="0.32"
+                  />
+                  <circle cx="12.5" cy={12} r={8} fill="#355E5B" fillOpacity="0.9" />
+                </svg>
 
-            </span>
+              </span>
 
-            {/* Time */}
-            <p className="text-xs text-gray-500 mb-2">{log.time}</p>
+              {/* Time */}
+              <p className="text-xs text-gray-500 mb-2">{log.time}</p>
 
-            {/* Card */}
-            <div className="border border-[#EAECF0] rounded-lg shadow-sm p-4">
-              <div className="flex items-center gap-2 mb-1 bg-[#FAFAFA] p-2 border border-[#EAECF0A3] rounded mb-4">
-                {log.icon}
-                <span className="text-[14px] font-medium text-[#202E2DA8]">{log.type}</span>
+              {/* Card */}
+              <div className="border border-[#EAECF0] rounded-lg shadow-sm p-4">
+                <div className="flex items-center gap-2 mb-1 bg-[#FAFAFA] p-2 border border-[#EAECF0A3] rounded mb-4">
+                  {log.icon}
+                  <span className="text-[14px] font-medium text-[#202E2DA8]">{log.type}</span>
+                </div>
+                <p className="text-[14px] text-[202E2D99] mb-2">By {log.author}</p>
+                {log.description && (
+                  <p className="text-sm text-[#202E2D99] leading-relaxed">{log.description}</p>
+                )}
               </div>
-              <p className="text-[14px] text-[202E2D99] mb-2">By {log.author}</p>
-              {log.description && (
-                <p className="text-sm text-[#202E2D99] leading-relaxed">{log.description}</p>
-              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
